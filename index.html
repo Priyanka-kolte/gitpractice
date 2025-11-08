@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class = "container">
+      <div class="register-container">
+       <div class="mb-3">
+        <label>name:</label>
+        <input type="text" id="name" class="form-control w-10" >
+       </div>
+
+       <div class="mb-3">
+        <label class="label">password:</label>
+        <input type="password" id="password">
+       </div>
+
+       <div class="mb-3">
+        <label class="label">state:</label>
+        <input type="text" id="state">
+       </div>
+
+       <div class="mb-3">
+        <label class="label">email:</label>
+        <input type="email" id="email">
+       </div>
+
+       <div class="mb-3">
+        <label class="label">DOB:</label>
+        <input type="date" id="name">
+       </div>
+
+       <div class="mb-3">
+        <label class="label">city:</label>
+        <input type="text" id="name">
+       </div>
+
+       <div class="mb-3">
+        <label class="label">Hobbies:</label>
+       <div class="mb-3">
+        <label class="label">palying cricket:</label>
+        <input type="checkbox" value="cricket">
+       </div>
+
+       <div class="mb-3">
+        <label class="label">palying TT:</label>
+        <input type="checkbox" value="TT">
+       </div>
+
+       <div class="mb-3">
+        <label class="label">watching movie</label>
+        <input type="checkbox" value="movie">
+       </div>
+
+       <div class="mb-3">
+        <input type="submit" onclick="data()">
+       </div>
+       </div>
+      </div>
+
+    </div>
+
+
+    <script>
+    
+    function data()
+    {
+        let data=[]
+        const name=document.getElementById("name").value
+        const email=document.getElementById("email").value
+
+        const hobbies=document.querySelectorAll("input[type=checkbox]:checked")
+         let hobby=hobbies.map(hobby=>hobby.value)
+         data.push({name,email,hobby})
+    sessionStorage.setItem("userdata",JSON.stringify(data))
+    window.location.href="info.html"
+    }
+
+   
+
+    
+
+    </script>
+</body>
+</html>
